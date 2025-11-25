@@ -1,3 +1,4 @@
+package pkg251.group3;
 public class Booking{
 
     private static int counter =1;
@@ -20,7 +21,7 @@ public class Booking{
         this.status="pending"; //defult booking status
     }
     //  Getter methods
-    public int getbookingID(){return bookingID;}
+    public int getBookingID(){return bookingID;}
     public String getRoomNummber(){return roomNumber;}
     public String getStaffID(){return staffID;}
     public String getDay(){return day;}

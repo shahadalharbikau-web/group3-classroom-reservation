@@ -1,3 +1,4 @@
+package pkg251.group3;
 import java.util.*;
 public class Admin{
     private String adminID;
@@ -66,7 +67,7 @@ public class Admin{
    }
     //admin will choose ID of the booking he/she want to change the statues of 
         System.out.println("Enter booking ID to manage ( or 0 to exit):");
-        int id= input.nextLine();
+        int id= input.nextInt();
         if(id == 0){
             return;
         }
