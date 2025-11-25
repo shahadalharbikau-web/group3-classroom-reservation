@@ -1,3 +1,4 @@
+package pkg251.group3;
 public class ClassRoom {
 
     private String roomNumber;

@@ -1,6 +1,4 @@
-
 package pkg251.group3;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
