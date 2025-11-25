@@ -8,6 +8,7 @@ public class Booking{
     private String day;
     private String time;
     private  String status; //aprrove or reject 
+    
 
 
 
