@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Staff {
 
-    private String staffID;
+ private String staffID;
     private String name;
 
     public Staff(String staffID, String name){
