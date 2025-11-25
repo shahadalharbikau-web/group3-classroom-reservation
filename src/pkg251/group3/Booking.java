@@ -21,12 +21,12 @@ public class Booking{
     }
     //  Getter methods
     public int getbookingID(){return bookingID;}
-    public String getroomNummber(){return roomNumber;}
-    public String getstaffID(){return staffID;}
-    public String getday(){return day;}
-    public String gettime(){ return time;}
-    public int getnumberOfStudents(){return numberOfStudents;}
-    public String getstatus(){return status;}
+    public String getRoomNummber(){return roomNumber;}
+    public String getStaffID(){return staffID;}
+    public String getDay(){return day;}
+    public String getTime(){ return time;}
+    public int getNumberOfStudents(){return numberOfStudents;}
+    public String getStatus(){return status;}
 
 
 
