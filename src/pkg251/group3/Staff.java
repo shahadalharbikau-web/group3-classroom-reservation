@@ -62,11 +62,11 @@ public class Staff {
 //core function: Book class room
 //creat a new booking request with status "pending"
 //staff can not approve thir own booking that is admain role
-public Booking ClassRoom(Classroom c,int students,String day,String time,ArrayIndexOutOfBoundsException<Booking>bookings){
+ public Booking ClassRoom(ClassRoom c,int students,String day,String time){
     // creat new booking object wtith staffID and selected room and time
-    booking b=new Booking(c.getRoomNumber(),staffID,day,time,students);
+    Booking b=new Booking(c.getRoomNumber(),staffID,day,time,students);
     // Add booking to the  System list
-    bookings.add(b); 
+    Booking.add(b);
     // print confirmation to the System
     System.out.println("Booking created with status PENDING :" +b.getDetails());
     return b;
@@ -74,14 +74,16 @@ public Booking ClassRoom(Classroom c,int students,String day,String time,ArrayIn
 //---------------------------------------------------------------------------------
 //view my Booking 
 // shows booking  history of this specific staff member only
- public void viewMyBooking(ArrayList<booking> bookings){
+ public void viewMyBooking(ArrayList<Booking> bookings){
     System.out.println("\n--- Booking history for"+name+"---");
     //loop through all bookings
      for(Booking b: bookings){
-        if (b.getStaffID().equals(StaffID)){ //display only booking that belong to the logged-in staff
+        if (b.getStaffID().equals(staffID)){ //display only booking that belong to the logged-in staff
             System.out.println(b.getDetails());
         }  
         }
      }
      
- }
+ 
+    
+}
