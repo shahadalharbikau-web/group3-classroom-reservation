@@ -59,3 +59,6 @@ public class Staff {
          return result;
         } 
     }
+//core function: Book class room
+//creat a new booking request with status "pending"
+public Booking ClassRoom
