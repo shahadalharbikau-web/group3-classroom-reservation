@@ -20,9 +20,9 @@ public class Staff {
         ArrayList<ClassRoom> result = new ArrayList<>();
         
         // loop through all classrooms list
-        for (int i = 0; i < classRooms.size(); i++) {
+        for (int i = 0; i < classrooms.size(); i++) {
 
-            ClassRoom c = classRooms.get(i);// current classroom
+            ClassRoom c = classrooms.get(i);// current classroom
 
             // Check the conditions for the classroom:
             // Capacity is enough for the number of students and Classroom type matches what the user selected (lab/regular) and the classroom is active in the system
