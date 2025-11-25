@@ -19,6 +19,14 @@ public class Booking{
         this.numberOfStudents=numberOfStudents;
         this.status="pending"; //defult booking status
     }
+    //  Getter methods
+    public int getbookingID(){return bookingID;}
+    public String getroomNummber(){return roomNumber;}
+    public String getstaffID(){return staffID;}
+    public String getday(){return day;}
+    public String gettime(){ return time;}
+    public int getnumberOfStudents(){return numberOfStudents;}
+    public String getstatus(){return status;}
 
 
 
