@@ -63,7 +63,7 @@ public class Staff {
 //core function: Book class room
 //creat a new booking request with status "pending"
 //staff can not approve thir own booking that is admain role
- public Booking ClassRoom(ClassRoom c,int students,String day,String time,ArrayList<Booking> bookings){
+ public Booking bookClassroom(ClassRoom c,int students,String day,String time,ArrayList<Booking> bookings){
     // creat new booking object wtith staffID and selected room and time
     Booking b=new Booking(c.getRoomNumber(),staffID,day,time,students);
     // Add booking to the  System list

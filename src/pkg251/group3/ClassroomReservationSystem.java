@@ -15,7 +15,7 @@ public class ClassroomReservationSystem {
        Admin admin = new Admin("A001","AdminUser");
        Staff staff = new Staff("S001","StaffUser");
 
-       int choice;
+       int choice=0;
        do {
 
         System.out.println("\n===== Classroom Reservation System =====");
