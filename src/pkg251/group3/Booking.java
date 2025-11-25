@@ -28,7 +28,27 @@ public class Booking{
     public int getnumberOfStudents(){return numberOfStudents;}
     public String getstatus(){return status;}
 
-
-
+    //needed by admin
+    public void approve(){
+        this.status = "approved";
+    }
+    
+    public void reject(){
+        this.status = "rejected";
+    }
+    
+    public void cancel(){
+        this.status = "cancelled";
+    }
+    
+    public String getDetails(){
+        return "Booking #" + bookingID+
+                " | Room: " + roomNumber+
+                " | Day: " + day+
+                " | Time: " + time+
+                " | Students: " + numberOfStudents+
+                " | Staff: " + staffID+
+                " | Status: " + status;
+    }
 
 }
