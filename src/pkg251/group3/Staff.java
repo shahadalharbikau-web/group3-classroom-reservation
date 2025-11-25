@@ -61,4 +61,23 @@ public class Staff {
     }
 //core function: Book class room
 //creat a new booking request with status "pending"
-public Booking ClassRoom
+public Booking ClassRoom(Classroom c,int students,String day,String time,ArrayIndexOutOfBoundsException<Booking>bookings){
+    booking b=new Booking(c.getRoomNumber(),staffID,day,time,students);
+    // Add booking to the list
+    bookings.add(b); 
+    System.out.println("Booking created with status PENDING :" +b.getDetails());
+    return b;
+}
+//---------------------------------------------------------------------------------
+//view my Booking 
+// shows booking  history of this specific staff member only
+ public void viewMyBooking(ArrayList<booking> bookings){
+    System.out.println("\n--- Booking history for"+name+"---");
+     for(Booking b: bookings){
+        if (b.getStaffID().equals(StaffID)){
+            System.out.println(b.getDetails());
+        }  
+        }
+     }
+     
+ }
