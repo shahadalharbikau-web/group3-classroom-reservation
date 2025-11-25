@@ -40,7 +40,7 @@ public class Staff {
                 Booking b = bookings.get(j);
 
                 // Check if this booking matches the same room, same day/time, and is still active
-                boolean sameBooking = b.getRoomNumber().equals(c.getRoomNumber()) && b.getDay().equalsIgnoreCase(day) && b.getTime().equalsIgnoreCase(time);
+                boolean sameBooking =  b.getRoomNummber().equals(c.getRoomNumber()) && b.getDay().equalsIgnoreCase(day) && b.getTime().equalsIgnoreCase(time);
 
                 boolean activeStatus = !b.getStatus().equals("cancelled") && !b.getStatus().equals("rejected");
 
