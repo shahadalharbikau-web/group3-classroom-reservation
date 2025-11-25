@@ -159,7 +159,7 @@ public class ClassroomReservationSystem {
         ClassRoom selected = available.get(choice - 1);
 
         // book classroom
-        staff.bookClassroom(selected, students, day, time, bookings);
+        staff.ClassRoom(selected, students, day, time, bookings);
     }
 
 }
