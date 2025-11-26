@@ -50,13 +50,14 @@ public class Staff {
                     isFree = false; // make room as not available
                     break;
                 }
+            }
 
                 // if room is free after checking all bookings
                 if(isFree){
                     result.add(c); // add it to the result list
                 }
             }
-         }
+         
          return result;
         } 
     
