@@ -13,11 +13,17 @@ public class classtest {
      */
     @Test
     public void testBookClassroom() {
+        //create a staff member who will make the booking
         Staff staff=new Staff("F001","staffUesr");
+        //List that will store all booking
         ArrayList<Booking> bookings = new ArrayList<>();
+        //creat a classroom to be booked
         ClassRoom room=new ClassRoom("G122","G",20,"regular");
+        //attempt to book the classroom and get the returned booking object
         Booking result = staff.bookClassroom(room, 40, "mon", "9-10", bookings);
+        //verify that exactly 1 booking has been added to the list
         assertEquals(1, bookings.size());
+        //verify that the booking has the default status "pending"
         assertEquals("pending", result.getStatus());
     }
 
