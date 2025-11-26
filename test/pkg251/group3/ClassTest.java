@@ -65,4 +65,37 @@ public class classtest {
          assertEquals("S101", result.get(0).getRoomNumber());
     }
     
+    // test of testAddClassroom method, of class Admin
+        @Test 
+    public void testAddClassroom(){
+        // Simulated user input:
+        //roomNumber= A101 , foor= A ,capacity =30 , classType =lab
+
+        String=fakeInput ="A101\nA\n30\nlab\n";
+       //create scanner to use the fakeInput
+        Scanner input = new Scanner(fakeInput);
+        //an empty list to store classrooms
+        ArrayList<ClassRoom> rooms =new ArrayList<>();
+        //Admin object to call addClassroom method
+        Admin admin =new Admin("A001","AdminUser");
+
+        // call the method
+        admin.addClassroom(rooms,input);
+        //check that exactly one classroom was added
+        assertEquals(1,rooms.size());
+        //get the added classroom for further verification
+        ClassRoom c=rooms.get(0);
+
+        //ensure that all info of classroom are correctly recorded
+
+        //room number should match
+        assertEquals("A101",c.getRoomNumber());
+        //floor number should match
+        assertEquals("A",c.getFloorNumber());
+        // capacity should match
+        assertEquals(30,c.getCapacity());
+        //class type should match
+        assertEquals("lab",c.getClassType());
+    }
+    
 }

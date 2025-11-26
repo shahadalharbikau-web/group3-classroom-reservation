@@ -27,6 +27,7 @@ public class Admin{
      // Ask for the capacity
     System.out.println("Enter capacity: ");
     int capacity =input.nextInt();
+    input.nextLine();
      // Ask for the class type
     System.out.println("Enter class type (lab / regular): ");
     String classType = input.nextLine();
