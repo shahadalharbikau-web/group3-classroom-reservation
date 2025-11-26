@@ -19,7 +19,7 @@ public class ClassroomReservationSystem {
         int mainChoice = -1;
 
    
-        do {
+        do { // continues until user chooses Exit
             System.out.println("\n===== Welcome to Classroom Reservation System =====");
             System.out.println("1) Login as Admin");
             System.out.println("2) Login as Staff");
@@ -51,22 +51,28 @@ public class ClassroomReservationSystem {
 
                         switch (adminChoice) {
                             case 1:
-                                                       // adding classrooms function for the admin
+                             // adding classrooms function for the admin
                                 admin.addClassroom(classrooms, in);
                                 break;
                             case 2:
-                                                        // managing booking requests that been sent by the staff for the admin function 
+                              // managing booking requests that been sent by the staff for the admin function 
                                 admin.manageBookingRequests(bookings, in);
                                 break;
                             case 3:
-                                                         // viewing the booking requests that been sent to the admin by the admin function 
+                                  // viewing the booking requests that been sent to the admin by the admin function 
                                 admin.viewAllBookings(bookings);
                                 break;
                             case 0:
+                                // this if the user asked to go to the main page 
+        
                                 System.out.println("Returning...");
+
                                 break;
+
                             default:
+                                
                                 System.out.println("Invalid choice.");
+
                         }
 
                     } while (adminChoice != 0);
@@ -89,13 +95,20 @@ public class ClassroomReservationSystem {
 
                         switch (staffChoice) {
                             case 1:
-                                                                 // searching THEN booking function for the staff
+                               // searching THEN booking function for the staff this is very important fucntion
+                               // as the user wont book anythin unless they searched 
+                               // the user wont get any list unless they searched too
+
                                 handleStaffSearchAndBooking(staff, classrooms, bookings, in);
+
                                 break;
+
                             case 0:
-                                System.out.println("Returning...");
+                                System.out.println("Returning..."); // this if the user asked to go to the main page
                                 break;
+
                             default:
+
                                 System.out.println("Invalid choice.");
                         }
 
@@ -103,7 +116,7 @@ public class ClassroomReservationSystem {
                     break;
 
                 case 0:
-                    System.out.println("Goodbye!");
+                    System.out.println("Goodbye!"); // this if they user decided to exit of he system
                     break;
 
                 default:
@@ -116,7 +129,7 @@ public class ClassroomReservationSystem {
     }
 
     
-    // Staff Search & Booking (AS IT IS)
+    // this method only and only to search and book 
     
     private static void handleStaffSearchAndBooking(Staff staff, ArrayList<ClassRoom> classrooms, ArrayList<Booking> bookings, Scanner in) {
 
@@ -134,7 +147,7 @@ public class ClassroomReservationSystem {
         System.out.print("Enter class type:");
         String type = in.nextLine();
 
-        // search for a classroom
+        // search for a classroom for the staff only 
         ArrayList<ClassRoom> available =
                 staff.searchClassrooms(students, day, time, type, classrooms, bookings);
 
@@ -142,12 +155,12 @@ public class ClassroomReservationSystem {
             System.out.println("No available classrooms found for this criteria");
             return;
         }
-
+        // here it will display the classrooms that will be according to whatever the staff member wrote ( search critiera )
         System.out.println("\nAvailable classrooms:");
         for (int i = 0; i < available.size(); i++) {
             System.out.println((i + 1) + ") " + available.get(i));
         }
-
+        // after the staff saw the list now they will book however if they dont want there is a choice to cancel the operation
         System.out.print("Select classroom number to book (0 to cancel):");
         int choice = Integer.parseInt(in.nextLine());
 
@@ -158,7 +171,7 @@ public class ClassroomReservationSystem {
 
         ClassRoom selected = available.get(choice - 1);
 
-        // book classroom
+        // finally the staff can book classroom
         staff.ClassRoom(selected, students, day, time, bookings);
     }
 
