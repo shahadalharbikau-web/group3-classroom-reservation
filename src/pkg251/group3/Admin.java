@@ -69,6 +69,7 @@ public class Admin{
     //admin will choose ID of the booking he/she want to change the statues of 
         System.out.println("Enter booking ID to manage ( or 0 to exit):");
         int id= input.nextInt();
+        input.nextLine();
         if(id == 0){
             return;
         }
@@ -88,15 +89,16 @@ public class Admin{
     //will take admin input of approve or regect the booking object
     else{
         System.out.print("if Approve enter (A) || Reject enter (R)?");
-        String choice=input.nextLine();
+         //i added trim to make sure even if user entered spaces trim will not take them only the letter be taken
+        String choice=input.next().trim();
         //change status of the selected booking object based on admin choice (approve)
         if(choice.equals("A")||choice.equals("a")){
             selected.approve();
-            System.out.println("Booking rejected");
+            System.out.println("Booking approved");
             
         }
-        //change status of the selected booking object based on admin choice (approve)
-        else if(choice.equals(choice.equals("R")||choice.equals("r"))){
+        //change status of the selected booking object based on admin choice (reject)
+        else if(choice.equals("R")||choice.equals("r")){
           selected.reject();
           System.out.println("Booking rejected");
           

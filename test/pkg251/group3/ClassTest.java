@@ -97,5 +97,69 @@ public class classtest {
         //class type should match
         assertEquals("lab",c.getClassType());
     }
-    
-}
+       @Test
+    //test case1 : verify that manageBookingRequests dosent modify any bookings that are not pending 
+    public void testManageBooking_NoPending() {
+        //make new admin object so we can call the manageBookingRequest
+        Admin admin = new Admin("A1","Admin");
+        //bookings arraylist to store the virtual booking in it and send it as parameters to the manageBookingRequests method
+        ArrayList<Booking>bookings=new ArrayList<>();
+        //virtual booking
+        Booking b=new Booking ("A101","S001","Sun","8-9",30);
+        //state booking as approved 
+        b.approve();
+        //add booking to the arraylist
+        bookings.add(b);
+        //store the statues of the booking before calling the manage method
+        String statusBefore=b.getStatus();
+        //empty scanner to send in parameters, its a test so we dont have to read from user
+        Scanner in=new Scanner("");
+        //call the manageBookingRequest and it suppose to display no pendings
+        admin.manageBookingRequests(bookings, in);
+        //check that it didnt change on the only booking that is approved, because changes only made if there are pending bookings
+        assertEquals(statusBefore,b.getStatus());
+    }
+    @Test
+    //test case3: check that manageBooking change statues of required booking with the given id to approve as the admin entered
+    public void testManageBooking_Approve(){
+        //make new admin object so we can call the manageBookingRequest
+        Admin admin=new Admin("A1","Admin");
+        //bookings arraylist to store the virtual booking in it and send it as parameters to the manageBookingRequests method
+        ArrayList<Booking>bookings=new ArrayList<>();
+        //virtual booking
+        Booking b=new Booking("A102","S001","Mon","10-11",25);
+        //add booking to the arraylist
+        bookings.add(b);
+        //get booking ID
+        int id=b.getBookingID();
+        //store virtual input act as the admin want to change the current booking status with the stored id, to atatus Approve
+        String adminInput=id+"\nA\n";
+        Scanner in=new Scanner(adminInput);
+        //call the manageBookingRequests by sending arraylist, and the scanner with the virtual input
+        admin.manageBookingRequests(bookings,in);
+        //check if manageBookingRequests changed the status from pending to approved as entered
+        assertEquals("approved",b.getStatus());
+    }
+    @Test
+    //test case3: check that manageBooking change statues required booking with the given id to reject of the  as the admin entered
+    public void testManageBooking_Reject(){
+     //make new admin object so we can call the manageBookingRequest   
+     Admin admin=new Admin("A1","Admin");
+     //bookings arraylist to store the virtual booking in it and send it as parameters to the manageBookingRequests method
+     ArrayList<Booking>bookings=new ArrayList<>();
+     //virtual booking
+      Booking b=new Booking("A102","S001","Mon","10-11",25);
+     //add booking to the arraylist
+        bookings.add(b);
+      //get booking ID
+         int id=b.getBookingID();
+      //store virtual input act as the admin want to change the current booking status with the stored id, to atatus Reject
+        String adminInput=id+"\nR\n";
+        Scanner in=new Scanner(adminInput);
+      //call the manageBookingRequests by sending arraylist, and the scanner with the virtual input
+        admin.manageBookingRequests(bookings,in);
+      //check if manageBookingRequests changed the status from pending to rejected as entered
+        assertEquals("rejected",b.getStatus());
+    }
+ }
+ 
