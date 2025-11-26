@@ -8,7 +8,7 @@ public class Booking{
     private String staffID;
     private String day;
     private String time;
-    private String status; //aprrove or reject 
+    private String status; //aprrove or reject or cancell
     
     //constructor take parameters and assign them to variables
     public Booking(String roomNumber,String staffID,String day, String time,int numberOfStudents){
