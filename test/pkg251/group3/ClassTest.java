@@ -163,7 +163,8 @@ public class classTest {
         assertEquals("rejected",b.getStatus());
     }
 
-    @Test
+    @Test     
+    // test case 
     // Testing the method of the ClassroomReservationSystem it calls handlesearchandbooking 
     public void testHandleSearchAndBooking() {
         // make a staff object who will perform the search and booking only to test
