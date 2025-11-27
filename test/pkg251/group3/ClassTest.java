@@ -180,11 +180,11 @@ public class classTest {
           assertEquals(1, result.size());
          // check that the classroom returned is the expected one
           assertEquals("B201", result.get(0).getRoomNumber());
-          // book the classroom
+          // book the classroom by the staff
           Booking b = staff.bookClassroom(result.get(0), 20, "Sun", "8-9", bookings);
            // verify that exactly one booking was added to the bookings list
           assertEquals(1, bookings.size());
-           // verify that the new booking has the default status "pending"
+           //make sure that the new booking has the default status "pending"
           assertEquals("pending", b.getStatus());
          }
 
