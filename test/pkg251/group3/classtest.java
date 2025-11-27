@@ -6,6 +6,7 @@ package pkg251.group3;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.Scanner;
 
 public class classtest {
     
