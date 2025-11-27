@@ -8,9 +8,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class classtest {
-     /**
-     * Test of bookClassroom method, of class Staff.
-     */
+    
+     // Test 1: of bookClassroom method, of class Staff.
+     
     @Test
     public void testBookClassroom() {
         //create a staff member who will make the booking
@@ -25,6 +25,22 @@ public class classtest {
         assertEquals(1, bookings.size());
         //verify that the booking has the default status "pending"
         assertEquals("pending", result.getStatus());
+    }
+    @Test
+    // test2: of booking should fail when studentnumber more than room capacity
+    public void testBookClassroomCapacityExceede(){
+        // create a staff member 
+        Staff staff=new Staff("F001","staffUeser");
+        //List that stores all bookings
+        ArrayList<Booking> bookings = new ArrayList<>();
+        //Room Capacity is 20
+        ClassRoom room=new ClassRoom ("G122","G",20,"regular");
+        //Attempt to book with 40 student (Exceede Capacity)
+        Booking result =staff.bookClassroom(room, 40, "MON", "9-10", bookings);
+        //Verify that no booking was add
+        assertEquals(0, bookings.size());
+        //Verify that booking result is null 
+        assertNull(result); 
     }
 
     // test of testSearchClassrooms method, of class Staff
