@@ -59,9 +59,7 @@ public class classtest {
        //should not add new booking because time already booked
        assertEquals(1, bookings.size());
        //result is null  becouse booking failed
-        assertNull(result); 
-       
-        
+        assertNull(result);  
     }
 
     // test of testSearchClassrooms method, of class Staff
