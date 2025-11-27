@@ -196,5 +196,31 @@ public class classtest {
       //check if manageBookingRequests changed the status from pending to rejected as entered
         assertEquals("rejected",b.getStatus());
     }
+     @Test     
+    // test case 4
+    // Testing the method of the ClassroomReservationSystem class it calls handlesearchandbooking 
+    public void testHandleSearchAndBooking() {
+        // make a staff object who will perform the search and booking only to test
+        Staff staff = new Staff("S001", "StaffUser");
+        // create a list of classrooms and add one available classroom
+        ArrayList<ClassRoom> rooms = new ArrayList<>();
+        // make a classroom object just to test
+        ClassRoom c = new ClassRoom("B201", "B", 40, "lab");
+        rooms.add(c);
+        // create an empty list to store bookings
+        ArrayList<Booking> bookings = new ArrayList<>();
+        // perform search using the staff object 
+        ArrayList<ClassRoom> result = staff.searchClassrooms(20, "Sun", "8-9", "lab", rooms, bookings);
+        // check that the search returned exactly 1 classroom
+        assertEquals(1, result.size());
+        // check that the classroom returned is the expected one
+        assertEquals("B201", result.get(0).getRoomNumber());
+        // book the classroom by the staff
+        Booking b = staff.bookClassroom(result.get(0), 20, "Sun", "8-9", bookings);
+        // verify that exactly one booking was added to the bookings list
+        assertEquals(1, bookings.size());
+        //make sure that the new booking has the default status "pending"
+        assertEquals("pending", b.getStatus());
+         }
  }
  
