@@ -42,6 +42,26 @@ public class classtest {
         //Verify that booking result is null 
         assertNull(result); 
     }
+     // test 3: of the booking should fail when the room is already booked
+    @Test
+    public void testBookClassRoomAlreadyBooked(){
+        //Create a staff member 
+        Staff staff = new Staff("F001","staffUesr");
+        //List that stores all bookings
+        ArrayList<Booking> bookings = new ArrayList<>();
+        //create a classroom
+        ClassRoom room=new ClassRoom ("G122","G",20,"regular");
+        // Add an existing booking to simulate the room being already booked
+        bookings.add(new Booking("G122","F001","MON","9-10",15));
+       //Attempt to book again for the same time solt
+       Booking result =staff.bookClassroom(room, 10, "MON", "9-10", bookings);
+       //should not add new booking because time already booked
+       assertEquals(1, bookings.size());
+       //result is null  becouse booking failed
+        assertNull(result); 
+       
+        
+    }
 
     // test of testSearchClassrooms method, of class Staff
     @Test
