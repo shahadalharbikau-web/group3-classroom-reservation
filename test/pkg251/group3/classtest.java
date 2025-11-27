@@ -71,7 +71,7 @@ public class classtest {
         // Simulated user input:
         //roomNumber= A101 , foor= A ,capacity =30 , classType =lab
 
-        String=fakeInput ="A101\nA\n30\nlab\n";
+        String fakeInput ="A101\nA\n30\nlab\n";
        //create scanner to use the fakeInput
         Scanner input = new Scanner(fakeInput);
         //an empty list to store classrooms
