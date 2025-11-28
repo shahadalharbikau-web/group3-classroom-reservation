@@ -51,4 +51,7 @@ public class Booking{
                 " | Staff: " + staffID+
                 " | Status: " + status;
     }
+    public String toString(){
+        return getDetails();
+    }
 }
