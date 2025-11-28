@@ -36,7 +36,7 @@ public class Admin{
     // Add it to the list
     classrooms.add(c);
 
-    System.out.println("classroom added: ");
+    System.out.println("classroom added");
   }
  
   // Method yo manage booking requests
