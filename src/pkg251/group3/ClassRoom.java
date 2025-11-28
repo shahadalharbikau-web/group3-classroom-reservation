@@ -34,21 +34,4 @@ public class ClassRoom {
     public boolean isActive() {
         return isActive;
     }
-
-    public void updateInfo(String roomNumber, String floorNumber, int capacity, String classType) 
-    {
-        this.roomNumber = roomNumber;
-        this.floorNumber = floorNumber;
-        this.capacity = capacity;
-        this.classType = classType;
-    }
-
-    @Override
-    public String toString()
-     {
-        return "Room " + roomNumber +
-                " (Floor " + floorNumber +
-                ", Capacity " + capacity +
-                ", Type " + classType + ")";
-    }
 }
