@@ -34,4 +34,12 @@ public class ClassRoom {
     public boolean isActive() {
         return isActive;
     }
+
+    @Override
+public String toString() {
+    return "Room: " + roomNumber +
+           " | Floor: " + floorNumber +
+           " | Capacity: " + capacity +
+           " | Type: " + classType;
+}
 }
